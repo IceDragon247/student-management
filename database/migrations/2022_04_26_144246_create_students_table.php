@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('lastName');
+            $table->string('firstName');
+            $table->date('dob');
+            $table->boolean('gender'); // false = male, true = female;
+            $table->unsignedBigInteger('batch_id');
         });
     }
 

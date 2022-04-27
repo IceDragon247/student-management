@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('grades', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('subject_id');
+            $table->float('firstGrade')->nullable();
+            $table->float('secondGrade')->nullable();
+
+            $table->primary('student_id', 'subject_id');
         });
     }
 
