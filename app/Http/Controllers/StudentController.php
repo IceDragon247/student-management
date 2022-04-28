@@ -8,6 +8,6 @@ use App\Models\Student;
 class StudentController extends Controller
 {
     public function index(Request $request){
-        return Student::all();
+        return view('students.index', ['students' => Student::all()]);
     }
 }

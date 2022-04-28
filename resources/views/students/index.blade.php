@@ -3,7 +3,7 @@
         <title>All Students</title>
     </head>
     <body>
-        <h1>All Student</h1>
+        <h1>All Students</h1>
         <table>
             <tr>
                 <th>ID</th>
@@ -15,7 +15,14 @@
             </tr>
 
             @foreach ($students as $student)
-
+                <tr>
+                    <td>{{ $student->id }}</td>
+                    <td>{{ $student->lastName }}</td>
+                    <td>{{ $student->firstName }}</td>
+                    <td>{{ $student->dob }}</td>
+                    <td>{{ $student->gender ? "Female" : "Male"}}</td>
+                    <td>{{ $student->batch_id }}</td>
+                </tr>
             @endforeach
         </table>
     </body>
