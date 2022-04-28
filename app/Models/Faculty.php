@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Faculty extends Model
 {
     use HasFactory;
+
+    public function batches() {
+        return $this->hasMany(Batch::class);
+    }
 }
