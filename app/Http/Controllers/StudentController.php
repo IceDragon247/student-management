@@ -21,7 +21,7 @@ class StudentController extends Controller
     }
 
     public function add(Request $request) {
-        return view('students.add', ['edit' => false, 'student' => newStudent(), 'batches' => Batch::all()]);
+        return view('students.add', ['edit' => false, 'student' => new Student(), 'batches' => Batch::all()]);
     }
 
     public function store(Request $request) {

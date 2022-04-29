@@ -1,11 +1,7 @@
-<html>
-    <head>
-        <title>All Students</title>
-    </head>
-    <body>
-        <h1>All Students</h1>
-        <a href="/students/add">Add new student</a>
-        <table>
+<x-layout title="All students">
+    <a class="btn btn-primary" href="/students/add">Add new student</a>
+    <table class="table">
+        <thead>
             <tr>
                 <th>ID</th>
                 <th>Last Name</th>
@@ -15,7 +11,9 @@
                 <th>Batch</th>
                 <th>Faculty</th>
             </tr>
-
+        </thead>
+        
+        <tbody>
             @foreach ($students as $student)
                 <tr>
                     <td>{{ $student->id }}</td>
@@ -26,10 +24,11 @@
                     <td>{{ $student->batch->name }}</td>
                     <td>{{ $student->batch->faculty->name }}</td>
                     <td>
-                        <a href="/students/{{$student->id}}">Details</a>
+                        <a class="btn btn-outline-primary" href="/students/{{$student->id}}">Details</a>
                     </td>
                 </tr>
             @endforeach
-        </table>
-    </body>
-</html>
+        </tbody>
+    </table>
+</x-layout>
+
