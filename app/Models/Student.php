@@ -9,7 +9,14 @@ class Student extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    protected $guarded = [];
+
     public function batch() {
         return $this->belongsTo(Batch::class);
+    }
+
+    public function grades() {
+        return $this->hasMany(Grade::class);
     }
 }

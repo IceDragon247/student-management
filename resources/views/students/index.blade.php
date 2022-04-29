@@ -4,6 +4,7 @@
     </head>
     <body>
         <h1>All Students</h1>
+        <a href="/students/add">Add new student</a>
         <table>
             <tr>
                 <th>ID</th>
@@ -12,6 +13,7 @@
                 <th>Date of Birth</th>
                 <th>Gender</th>
                 <th>Batch</th>
+                <th>Faculty</th>
             </tr>
 
             @foreach ($students as $student)
@@ -21,7 +23,11 @@
                     <td>{{ $student->firstName }}</td>
                     <td>{{ $student->dob }}</td>
                     <td>{{ $student->gender ? "Female" : "Male"}}</td>
-                    <td>{{ $student->batch_id }}</td>
+                    <td>{{ $student->batch->name }}</td>
+                    <td>{{ $student->batch->faculty->name }}</td>
+                    <td>
+                        <a href="/students/{{$student->id}}">Details</a>
+                    </td>
                 </tr>
             @endforeach
         </table>
