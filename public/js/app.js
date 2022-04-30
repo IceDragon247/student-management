@@ -5374,13 +5374,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var deleteConfirmModal;
 
 function showModal() {
-  deleteConfirmModal = new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Modal(document.getElementById("delete-comfirm"));
+  deleteConfirmModal = new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Modal(document.getElementById("delete-confirm"));
   deleteConfirmModal.show();
 }
 
 window.showModal = showModal;
 
-function comfirmDelete() {
+function confirmDelete() {
   document.getElementById("delete-form").submit();
   deleteConfirmModal.hide();
 }

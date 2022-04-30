@@ -6,12 +6,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 var deleteConfirmModal;
 
 function showModal() {
-    deleteConfirmModal = new Modal(document.getElementById("delete-comfirm"));
+    deleteConfirmModal = new Modal(document.getElementById("delete-confirm"));
     deleteConfirmModal.show();
 }
 window.showModal = showModal;
 
-function comfirmDelete() {
+function confirmDelete() {
     document.getElementById("delete-form").submit();
     deleteConfirmModal.hide();
 }
