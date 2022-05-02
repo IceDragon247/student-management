@@ -9,6 +9,9 @@ class Subject extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    protected $guarded = [];
+
     public function grades() {
         return $this->hasMany(Grade::class);
     }

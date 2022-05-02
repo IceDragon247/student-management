@@ -51,14 +51,13 @@ class SubjectController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $student = Student::find($id);
-        if (is_null($student))
+        $subject = Subject::find($id);
+        if (is_null($subject))
             abort(404);
         
         $validated = $request->validate([
             'name' => 'required',
-            'credits' => 'required',
-            
+            'credits' => 'required', 
         ]);
         
         $subject->fill($validated);
