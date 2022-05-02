@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,11 @@ Route::post('/students', [StudentController:: class, 'store']);
 Route::get('/students/{id}/edit', [StudentController:: class, 'edit']);
 Route::delete('/students/{id}', [StudentController:: class, 'delete']);
 Route::put('/students/{id}', [StudentController:: class, 'update']);
+
+Route::get('/subjects', [SubjectController:: class, 'index']);
+Route::get('/subjects/add', [SubjectController:: class, 'add']);
+Route::get('/subjects/{id}', [SubjectController:: class, 'show']);
+Route::post('/subjects', [SubjectController:: class, 'store']);
+Route::get('/subjects/{id}/edit', [SubjectController:: class, 'edit']);
+Route::delete('/subjects/{id}', [SubjectController:: class, 'delete']);
+Route::put('/subjects/{id}', [SubjectController:: class, 'update']);
