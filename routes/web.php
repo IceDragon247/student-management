@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,11 @@ Route::post('/subjects', [SubjectController:: class, 'store']);
 Route::get('/subjects/{id}/edit', [SubjectController:: class, 'edit']);
 Route::delete('/subjects/{id}', [SubjectController:: class, 'delete']);
 Route::put('/subjects/{id}', [SubjectController:: class, 'update']);
+
+Route::get('/grades', [GradeController:: class, 'index']);
+Route::get('/grades/add', [GradeController:: class, 'add']);
+Route::get('/grades/{student_id}/{subject_id}', [GradeController:: class, 'show']);
+Route::post('/grades', [GradeController:: class, 'store']);
+Route::get('/grades/{student_id}/{subject_id}/edit', [GradeController:: class, 'edit']);
+Route::delete('/grades/{student_id}/{subject_id}', [GradeController:: class, 'delete']);
+Route::put('/grades/{student_id}/{subject_id}', [GradeController:: class, 'update']);
