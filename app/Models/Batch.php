@@ -9,6 +9,9 @@ class Batch extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    protected $guarded = [];
+
     public function students() {
         return $this->hasMany(Student::class);
     }
