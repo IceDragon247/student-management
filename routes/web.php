@@ -4,6 +4,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\BatchController;
+use App\Http\Controllers\FacultyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,3 +53,11 @@ Route::post('/batches', [BatchController:: class, 'store']);
 Route::get('/batches/{id}/edit', [BatchController:: class, 'edit']);
 Route::delete('/batches/{id}', [BatchController:: class, 'delete']);
 Route::put('/batches/{id}', [BatchController:: class, 'update']);
+
+Route::get('/faculties', [FacultyController:: class, 'index']);
+Route::get('/faculties/add', [FacultyController:: class, 'add']);
+Route::get('/faculties/{id}', [FacultyController:: class, 'show']);
+Route::post('/faculties', [FacultyController:: class, 'store']);
+Route::get('/faculties/{id}/edit', [FacultyController:: class, 'edit']);
+Route::delete('/faculties/{id}', [FacultyController:: class, 'delete']);
+Route::put('/faculties/{id}', [FacultyController:: class, 'update']);

@@ -63,6 +63,6 @@ class BatchController extends Controller
         
         $batch->fill($validated);
         $batch->save();
-        return redirect('/subjects/'.$batch->id);
+        return redirect('/batches/'.$batch->id);
     }
 }
