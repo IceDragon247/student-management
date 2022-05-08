@@ -5,8 +5,12 @@
     </head>
     <body>
         <div class="container">
-        <h1>{{ $title }}</h1>
-           {{ $slot }}
+            <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="btn btn-primary">Log out</button>
+            </form>
+            <h1>{{ $title }}</h1>
+            {{ $slot }}
         </div>
     </body>
 </html>
