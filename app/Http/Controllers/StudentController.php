@@ -19,7 +19,7 @@ class StudentController extends Controller
 
         return view('students.show', ['student' => $student]);
     }
-
+    
     public function add(Request $request) {
         return view('students.add', ['edit' => false, 'student' => new Student(), 'batches' => Batch::all()]);
     }

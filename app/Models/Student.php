@@ -19,4 +19,12 @@ class Student extends Model
     public function grades() {
         return $this->hasMany(Grade::class);
     }
+
+     protected static function booted() {
+        parent::boot();
+
+        static::deleting(function($student) {
+             $student->grades()->delete();
+        });
+    }
 }

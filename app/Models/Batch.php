@@ -19,4 +19,13 @@ class Batch extends Model
     public function faculty() {
         return $this->belongsTo(Faculty::class);
     }
+
+    protected static function booted() {
+        parent::boot();
+
+        static::deleting(function($batch) {
+            foreach ($batch->students as $student)
+            $student->delete();
+        });
+    }
 }
